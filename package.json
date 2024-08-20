@@ -1,0 +1,55 @@
+{
+  "name": "vue-cli-plugin-git-version",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "sideEffect": false,
+  "author": "xkloveme <xkloveme@gamil.com>",
+  "description": "generate a buildinfo.json file to public directory",
+  "license": "MIT",
+  "homepage": "https://github.com/xkloveme/vue-cli-plugin-git-version",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SolidZORO/vue-cli-plugin-git-version.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SolidZORO/vue-cli-plugin-git-version/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "scripts": {
+    "-------------------------------- TOOL ----": "----",
+    "versionup": "standard-version -r patch",
+    "versionup:minor": "standard-version -r minor",
+    "versionup:major": "standard-version -r major",
+    "versionup:init": "standard-version --first-release",
+    "-------------------------------- TEST ----": "----",
+    "test": "node ./__tests__/gen.test.js",
+    "test-vn": "node ./__tests__/vn.test.js",
+    "-------------------------------- PROD ----": "----",
+    "release-beta": "npm publish --dist-tag --tag beta",
+    "release": "npm publish --dist-tag"
+  },
+  "keywords": [
+    "buildinfo",
+    "webpack-plugin",
+    "webpack",
+    "plugin",
+    "build",
+    "info",
+    "output",
+    "git",
+    "hash",
+    "project",
+    "file",
+    "callback"
+  ],
+  "devDependencies": {},
+  "dependencies": {}
+}
