@@ -9,10 +9,10 @@
   "homepage": "https://github.com/xkloveme/vue-cli-plugin-git-version",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SolidZORO/vue-cli-plugin-git-version.git"
+    "url": "https://github.com/xkloveme/vue-cli-plugin-git-version.git"
   },
   "bugs": {
-    "url": "https://github.com/SolidZORO/vue-cli-plugin-git-version/issues"
+    "url": "https://github.com/xkloveme/vue-cli-plugin-git-version/issues"
   },
   "publishConfig": {
     "access": "public",

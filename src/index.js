@@ -66,4 +66,5 @@ class GenBuildInfoWebpackPlugin {
   }
 }
 
-module.exports = GenBuildInfoWebpackPlugin;
+module.exports = (opts) => new GenBuildInfoWebpackPlugin(opts);
+module.exports.GenBuildInfoWebpackPlugin = GenBuildInfoWebpackPlugin;

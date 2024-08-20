@@ -1,5 +1,3 @@
-好的，我会为您优化 README 文件，并说明如何在 Vue CLI 项目中使用这个插件。以下是修改后的 README 内容：
-
 # vue-cli-plugin-git-version
 
 [![version][npm-img]][npm-url]
@@ -63,7 +61,7 @@ new GenBuildInfoWebpackPlugin({
   "version": "1.0.0",
   "branch": "main",
   "hash": "abcdef1234567890",
-  "commitUser": "John Doe (john@example.com)",
+  "commitUser": "xkloveme (xkloveme@example.com)",
   "commitContent": "Latest commit message",
   "time": "2023-04-10 15:30:45"
 }
@@ -82,7 +80,7 @@ console.log('构建时间:', versionInfo.time);
 
 ## 许可证
 
-MIT © [Jason Feng][author-url]
+MIT © [xkloveme][author-url]
 
 <!-- badges -->
 
