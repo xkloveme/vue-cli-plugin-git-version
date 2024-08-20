@@ -65,6 +65,19 @@ class GenBuildInfoWebpackPlugin {
     });
   }
 }
+// 创建一个工厂函数
+function createGenBuildInfoWebpackPlugin(opts = {}) {
+  return new GenBuildInfoWebpackPlugin(opts);
+}
 
-module.exports = (opts) => new GenBuildInfoWebpackPlugin(opts);
+// 为工厂函数添加 apply 方法
+createGenBuildInfoWebpackPlugin.apply = function(compiler) {
+  return new GenBuildInfoWebpackPlugin().apply(compiler);
+};
+
+// 导出工厂函数作为默认导出和命名导出
+module.exports = createGenBuildInfoWebpackPlugin;
+module.exports.default = createGenBuildInfoWebpackPlugin;
+
+// 为了向后兼容，保留类的导出
 module.exports.GenBuildInfoWebpackPlugin = GenBuildInfoWebpackPlugin;
