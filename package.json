@@ -1,6 +1,6 @@
 {
   "name": "vue-cli-plugin-git-version",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "src/index.js",
   "sideEffect": false,
   "author": "xkloveme <xkloveme@gamil.com>",
