@@ -42,29 +42,27 @@ const getBuildInfo = () => {
 
 class GenBuildInfoWebpackPlugin {
   constructor(opts = {}) {
-    const PROJECT_ROOT_DIR = process.cwd();
-    const PROJECT_PUBLIC_DIR = path.join(PROJECT_ROOT_DIR, 'public');
-
     this.opts = {
-      fileDir: PROJECT_PUBLIC_DIR,
       fileName: 'version.json',
       ...opts,
     };
   }
 
   apply(compiler) {
-    compiler.hooks.afterPlugins.tap(PLUGIN_NAME, () => {
+    compiler.hooks.emit.tapAsync(PLUGIN_NAME, (compilation, callback) => {
       const buildInfo = getBuildInfo();
+      const { fileName } = this.opts;
 
-      const { fileDir, fileName } = this.opts;
+      compilation.assets[fileName] = {
+        source: () => JSON.stringify(buildInfo, null, 2),
+        size: () => JSON.stringify(buildInfo, null, 2).length
+      };
 
-      fs.writeFileSync(
-        path.resolve(fileDir, fileName),
-        JSON.stringify(buildInfo, null, 2),
-      );
+      callback();
     });
   }
 }
+
 // 创建一个工厂函数
 function createGenBuildInfoWebpackPlugin(opts = {}) {
   return new GenBuildInfoWebpackPlugin(opts);

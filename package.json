@@ -1,6 +1,6 @@
 {
   "name": "vue-cli-plugin-git-version",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "src/index.js",
   "sideEffect": false,
   "author": "xkloveme <xkloveme@gamil.com>",
@@ -25,10 +25,7 @@
   },
   "scripts": {
     "-------------------------------- TOOL ----": "----",
-    "versionup": "standard-version -r patch",
-    "versionup:minor": "standard-version -r minor",
-    "versionup:major": "standard-version -r major",
-    "versionup:init": "standard-version --first-release",
+    "publish": "npm publish",
     "-------------------------------- TEST ----": "----",
     "test": "node ./__tests__/gen.test.js",
     "test-vn": "node ./__tests__/vn.test.js",
